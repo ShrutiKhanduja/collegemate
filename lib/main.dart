@@ -1,4 +1,4 @@
-import 'package:collegemate/locationtracking.dart';
+import 'package:collegemate/models/locationtracking.dart';
 import 'package:collegemate/screens/homescreen.dart';
 import 'package:collegemate/screens/splash_screen.dart';
 import 'package:flutter/material.dart';

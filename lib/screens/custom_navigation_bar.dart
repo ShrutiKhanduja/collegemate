@@ -27,6 +27,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       AppHomeScreen(),
       AppHomeScreen(),
       AppHomeScreen(),
+      AppHomeScreen(),
     ];
   }
 
@@ -45,8 +46,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.star),
-        title: "Discover",
+        icon: Icon(Icons.light),
+        title: "FASTag",
         activeColorPrimary: Colors.red,
         inactiveColorPrimary: Colors.grey,
       ),
@@ -55,7 +56,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         title: "My Vehicles",
         activeColorPrimary: Colors.red,
         inactiveColorPrimary: Colors.grey,
-      )
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.star),
+        title: "Discover",
+        activeColorPrimary: Colors.red,
+        inactiveColorPrimary: Colors.grey,
+      ),
     ];
   }
 

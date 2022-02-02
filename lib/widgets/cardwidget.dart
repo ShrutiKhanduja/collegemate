@@ -30,21 +30,22 @@ class CardWidget extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             Container(
-                padding: EdgeInsets.only(left: 15, bottom: 15),
-                alignment: Alignment.bottomLeft,
-                width: 122,
-                height: 200,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    Colors.black.withOpacity(0.05),
-                    Colors.black.withOpacity(0.1),
-                    Colors.black.withOpacity(0.7),
-                  ], end: Alignment.bottomCenter, begin: Alignment.topCenter),
-                ),
-                child: Text(
-                  name,
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                )),
+              padding: EdgeInsets.only(left: 15, bottom: 15),
+              alignment: Alignment.bottomLeft,
+              width: 122,
+              height: 200,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Colors.black.withOpacity(0.05),
+                  Colors.black.withOpacity(0.1),
+                  Colors.black.withOpacity(0.7),
+                ], end: Alignment.bottomCenter, begin: Alignment.topCenter),
+              ),
+              child: Text(
+                name,
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
           ],
         ),
       ),

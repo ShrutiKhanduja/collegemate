@@ -1,15 +1,17 @@
 import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
+import 'package:collegemate/widgets/second_list_view_widget.dart';
 import 'package:flutter/material.dart';
 
-import 'list_view_widget.dart';
+import '../widgets/list_view_widget.dart';
 
 class AppHomeScreen extends StatelessWidget {
   const AppHomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -29,7 +31,7 @@ class AppHomeScreen extends StatelessWidget {
               onPressed: () {},
               icon: Icon(
                 Icons.notification_add,
-                color: Colors.deepOrange,
+                color: Colors.grey.shade700,
                 size: 30,
               ),
             ),
@@ -43,23 +45,7 @@ class AppHomeScreen extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Text(
-                'Container name',
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 150,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.asset(
-                    'assets/images/amazon.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              SecondListViewWidget(),
               SizedBox(
                 height: 15,
               ),
@@ -72,9 +58,14 @@ class AppHomeScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return MapScreen();
-                  }));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MapScreen();
+                      },
+                    ),
+                  );
                 },
                 child: Container(
                   height: 180,
@@ -87,9 +78,48 @@ class AppHomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              // CustomBottomNavigationBar(),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Text(
+//                 'Container name',
+//                 style: TextStyle(fontSize: 16),
+//               ),
+//               SizedBox(
+//                 height: 10,
+//               ),
+//               Container(
+//                 height: 150,
+//                 child: ClipRRect(
+//                   borderRadius: BorderRadius.circular(15),
+//                   child: Image.asset(
+//                     'assets/images/amazon.jpg',
+//                     fit: BoxFit.cover,
+//                   ),
+//                 ),
+//               ),
