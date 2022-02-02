@@ -1,3 +1,4 @@
+import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,12 @@ class AppHomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          leading: CircleAvatar(
-            radius: 10,
-            backgroundImage: AssetImage('assets/images/amazon.jpg'),
+          leading: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              radius: 2,
+              backgroundImage: AssetImage('assets/images/amazon.jpg'),
+            ),
           ),
           title: Text(
             'TITLE',
@@ -22,11 +26,13 @@ class AppHomeScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.notification_add,
-                  color: Colors.black,
-                ))
+              onPressed: () {},
+              icon: Icon(
+                Icons.notification_add,
+                color: Colors.deepOrange,
+                size: 30,
+              ),
+            ),
           ],
         ),
         body: Padding(
@@ -81,6 +87,7 @@ class AppHomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              // CustomBottomNavigationBar(),
             ],
           ),
         ));

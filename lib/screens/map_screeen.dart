@@ -63,24 +63,128 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(),
-      body: GoogleMap(
-        myLocationButtonEnabled: false,
-        markers: Set<Marker>.of(list),
-        // {_redMarker, _blueMarker},
-        polylines: {_kPolyline},
-        zoomControlsEnabled: false,
-        initialCameraPosition: _intialCameraPostion,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+      body: Stack(
+        children: [
+          GoogleMap(
+            myLocationButtonEnabled: false,
+            markers: Set<Marker>.of(list),
+            // {_redMarker, _blueMarker},
+            polylines: {_kPolyline},
+            zoomControlsEnabled: false,
+            initialCameraPosition: _intialCameraPostion,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
+          ),
+          SafeArea(
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          DraggableScrollableSheet(
+            initialChildSize: 0.4,
+            maxChildSize: 0.5,
+            minChildSize: 0.2,
+            builder: (context, controller) {
+              return SingleChildScrollView(
+                controller: controller,
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: FloatingActionButton(
+                          onPressed: () {
+                            print('new location');
+                            _goToPosition();
+                          },
+                          child: Icon(Icons.directions),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        ),
+                      ),
+                      height: MediaQuery.of(context).size.height,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(top: 20, left: 30, right: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Title',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: SizedBox(
+                                height: 120,
+                                width: 240,
+                                child: Card(
+                                  child: Column(
+                                    //  crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Location name',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Timing',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          print('object');
+                                        },
+                                        child: Text(
+                                          'click me',
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('new location');
-          _goToPosition();
-        },
-        child: Icon(Icons.directions),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     print('new location');
+      //     _goToPosition();
+      //   },
+      //   child: Icon(Icons.directions),
+      // ),
     );
   }
 
