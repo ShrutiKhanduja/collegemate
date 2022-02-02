@@ -19,20 +19,20 @@ class CardWidget extends StatelessWidget {
         elevation: 6,
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Stack(
           children: [
             Image.asset(
               image,
-              width: 122,
+              width: 180,
               height: 200,
               fit: BoxFit.cover,
             ),
             Container(
-              padding: EdgeInsets.only(left: 15, bottom: 15),
+              padding: EdgeInsets.only(left: 30, bottom: 30),
               alignment: Alignment.bottomLeft,
-              width: 122,
+              width: 180,
               height: 200,
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [

@@ -1,9 +1,5 @@
-import 'package:collegemate/models/locationtracking.dart';
-import 'package:collegemate/screens/homescreen.dart';
 import 'package:collegemate/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'screens/map_screeen.dart';
 
 void main() {
   runApp(const MyApp());
