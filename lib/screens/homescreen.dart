@@ -17,10 +17,20 @@ class AppHomeScreen extends StatelessWidget {
           elevation: 0,
           leading: Padding(
             padding: EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              radius: 2,
-              backgroundImage: AssetImage('assets/images/amazon.jpg'),
+            child: IconButton(
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.black,
+                size: 35,
+              ),
+              onPressed: () {
+                print('cr');
+              },
             ),
+            // child: CircleAvatar(
+            //   radius: 2,
+            //   backgroundImage: AssetImage('assets/images/amazon.jpg'),
+            // ),
           ),
           title: Text(
             'TITLE',
