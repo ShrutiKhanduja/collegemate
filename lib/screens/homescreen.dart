@@ -24,7 +24,7 @@ class AppHomeScreen extends StatelessWidget {
                 size: 35,
               ),
               onPressed: () {
-                print('cr');
+                print('Profile Icon pressed');
               },
             ),
             // child: CircleAvatar(
@@ -55,12 +55,17 @@ class AppHomeScreen extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              SecondListViewWidget(),
+              // for only testing purpose
+              GestureDetector(
+                  onTap: () {
+                    print('tap');
+                  },
+                  child: SecondListViewWidget()),
               SizedBox(
                 height: 15,
               ),
               Text(
-                'Container name',
+                'Find Cafeteria',
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(
