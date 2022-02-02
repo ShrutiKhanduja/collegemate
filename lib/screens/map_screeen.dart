@@ -32,21 +32,21 @@ class _MapScreenState extends State<MapScreen> {
   static final Polyline _kPolyline = Polyline(
       polylineId: PolylineId('_kPolyline'),
       points: [
-        LatLng(28.7341, 77.1025),
-        LatLng(28.7041, 77.1125),
+        LatLng(28.7041, 77.1025),
+        LatLng(28.7241, 77.1225),
       ],
       width: 3);
 
   // Set<Marker> _markers = {};
   Marker marker1 = Marker(
-    markerId: MarkerId('Marker1'),
-    position: LatLng(32.195476, 74.2023563),
+    markerId: MarkerId('red marker'),
+    position: LatLng(28.7041, 77.1025),
     infoWindow: InfoWindow(title: 'Business 1'),
     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
   );
   Marker marker2 = Marker(
-    markerId: MarkerId('Marker2'),
-    position: LatLng(32.110484, 74.224598),
+    markerId: MarkerId('blue marker'),
+    position: LatLng(28.7241, 77.1225),
     infoWindow: InfoWindow(title: 'Business 2'),
     icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
   );
@@ -69,11 +69,7 @@ class _MapScreenState extends State<MapScreen> {
         // {_redMarker, _blueMarker},
         polylines: {_kPolyline},
         zoomControlsEnabled: false,
-        initialCameraPosition: CameraPosition(
-          target: LatLng(32.1749132, 74.1779387),
-          zoom: 11.0,
-        ),
-        // _intialCameraPostion,
+        initialCameraPosition: _intialCameraPostion,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
