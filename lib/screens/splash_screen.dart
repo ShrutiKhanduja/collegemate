@@ -1,5 +1,4 @@
 import 'package:collegemate/screens/custom_navigation_bar.dart';
-import 'package:collegemate/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

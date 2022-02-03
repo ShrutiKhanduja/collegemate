@@ -16,12 +16,26 @@ class AppHomeScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              radius: 2,
-              backgroundImage: AssetImage('assets/images/amazon.jpg'),
+            padding: EdgeInsets.only(right: 8.0, left: 8),
+            child: IconButton(
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.black,
+                size: 35,
+              ),
+              onPressed: () {
+                print('Profile Icon pressed');
+              },
             ),
           ),
+
+          // leading: Padding(
+          //   padding: EdgeInsets.all(8.0),
+          //   child: CircleAvatar(
+          //     radius: 2,
+          //     backgroundImage: AssetImage('assets/images/amazon.jpg'),
+          //   ),
+          // ),
           title: Text(
             'TITLE',
             style: TextStyle(fontSize: 16, color: Colors.black),
@@ -44,6 +58,13 @@ class AppHomeScreen extends StatelessWidget {
               ListViewWidget(),
               SizedBox(
                 height: 15,
+              ),
+              Text(
+                'Container name',
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(
+                height: 10,
               ),
               SecondListViewWidget(),
               SizedBox(
@@ -85,26 +106,6 @@ class AppHomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  Text(
 //                 'Container name',

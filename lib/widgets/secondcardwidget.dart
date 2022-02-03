@@ -13,7 +13,7 @@ class SecondCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 150,
       child: Card(
         elevation: 6,
         clipBehavior: Clip.antiAlias,
@@ -24,15 +24,15 @@ class SecondCardWidget extends StatelessWidget {
           children: [
             Image.asset(
               image,
-              width: 122,
-              height: 200,
+              width: 150,
+              height: 150,
               fit: BoxFit.cover,
             ),
             Container(
               padding: EdgeInsets.only(left: 15, bottom: 15),
               alignment: Alignment.bottomLeft,
-              width: 122,
-              height: 200,
+              width: 150,
+              height: 150,
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
                   Colors.black.withOpacity(0.05),
