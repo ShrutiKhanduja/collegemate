@@ -1,5 +1,6 @@
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/widgets/second_list_view_widget.dart';
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,9 +29,10 @@ class AppHomeScreen extends StatelessWidget {
               },
             ),
           ),
-          title: Text(
-            'WELCOME TO OUR APP',
-            style: GoogleFonts.dongle(fontSize: 16, color: Colors.black),
+          title: MyText(
+            text: 'WELCOME TO OUR APP',
+            size: 18,
+            fontColor: Colors.black,
           ),
           actions: [
             IconButton(
@@ -51,9 +53,9 @@ class AppHomeScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.019,
               ),
-              Text(
-                'Container Text',
-                style: GoogleFonts.dongle(fontSize: 16),
+              MyText(
+                text: 'Container Text',
+                size: 16,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.013,
@@ -70,9 +72,9 @@ class AppHomeScreen extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.019,
                 //height: 15,
               ),
-              Text(
-                'Find Cafeteria',
-                style: GoogleFonts.dongle(fontSize: 16),
+              MyText(
+                text: 'Find Cafeteria',
+                size: 16,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.013,
@@ -97,7 +99,7 @@ class AppHomeScreen extends StatelessWidget {
                       //height: 150,
                       width: double.infinity,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
                           'assets/images/map.png',
                           fit: BoxFit.cover,
@@ -107,9 +109,9 @@ class AppHomeScreen extends StatelessWidget {
                     FlatButton(
                       color: Colors.blue,
                       onPressed: () {},
-                      child: Text(
-                        'Book Now'.toUpperCase(),
-                        style: GoogleFonts.dongle(color: Colors.white),
+                      child: MyText(
+                        text: 'Book Now'.toUpperCase(),
+                        fontColor: Colors.white,
                       ),
                     ),
                   ],

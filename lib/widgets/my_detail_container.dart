@@ -1,3 +1,4 @@
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,13 +10,19 @@ Widget myDetailsContainer1(String restaurantName) {
       Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Container(
-          child: Text(
-            restaurantName,
-            style: GoogleFonts.dongle(
-                color: Color(0xff6200ee),
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold),
+          child: MyText(
+            text: restaurantName,
+            size: 24.0,
+            fontColor: Color(0xff6200ee),
+            fontWeight: FontWeight.bold,
           ),
+          // Text(
+          //   restaurantName,
+          //   style: GoogleFonts.dongle(
+          //       color: Color(0xff6200ee),
+          //       fontSize: 24.0,
+          //       fontWeight: FontWeight.bold),
+          // ),
         ),
       ),
       SizedBox(height: 5.0),
@@ -24,13 +31,19 @@ Widget myDetailsContainer1(String restaurantName) {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
-              child: Text(
-            "4.1",
-            style: GoogleFonts.dongle(
-              color: Colors.black54,
-              fontSize: 18.0,
+            child: MyText(
+              text: "4.1",
+              fontColor: Colors.black,
+              size: 18,
             ),
-          )),
+            // Text(
+            //   "4.1",
+            //   style: GoogleFonts.dongle(
+            //     color: Colors.black54,
+            //     fontSize: 18.0,
+            //   ),
+            // ),
+          ),
           Container(
             child: Icon(
               FontAwesomeIcons.solidStar,
@@ -95,17 +108,22 @@ Widget myDetailsContainer1(String restaurantName) {
       SizedBox(height: 10),
       SizedBox(
         height: 40,
-        width: 200,
+        width: 180,
         child: ElevatedButton(
           onPressed: () {
             print('object');
           },
-          child: Text(
-            'click me'.toUpperCase(),
-            style: GoogleFonts.dongle(
-              fontSize: 20,
-            ),
+          child: MyText(
+            text: 'click me'.toUpperCase(),
+            size: 20,
+            fontColor: Colors.white,
           ),
+          // Text(
+          //   'click me'.toUpperCase(),
+          //   style: GoogleFonts.dongle(
+          //     fontSize: 20,
+          //   ),
+          // ),
         ),
       ),
     ],

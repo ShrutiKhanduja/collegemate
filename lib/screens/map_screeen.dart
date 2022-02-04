@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:collegemate/widgets/my_detail_container.dart';
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -141,8 +142,8 @@ class _MapScreenState extends State<MapScreen> {
                       height: MediaQuery.of(context).size.height * 0.5,
                       child: Column(
                         children: [
-                          Text('Title'),
-                          Text('Title'),
+                          MyText(text: 'Title'),
+                          MyText(text: 'Title'),
                           Expanded(
                             child: ListView(
                               scrollDirection: Axis.horizontal,
@@ -210,31 +211,48 @@ class _MapScreenState extends State<MapScreen> {
             ),
           ],
         ),
-        title: Text(
-          restaurantName,
-          style: GoogleFonts.dongle(
-              color: Color(0xff6200ee),
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold),
+        title: MyText(
+          text: restaurantName,
+          fontColor: Color(0xff6200ee),
+          size: 16.0,
+          fontWeight: FontWeight.bold,
         ),
+        // Text(
+        //   restaurantName,
+        //   style: GoogleFonts.dongle(
+        //       color: Color(0xff6200ee),
+        //       fontSize: 16.0,
+        //       fontWeight: FontWeight.bold),
+        // ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
-              style: GoogleFonts.dongle(
-                color: Colors.black54,
-                fontSize: 18.0,
-              ),
+            MyText(
+              text: "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
+              fontColor: Colors.black54,
+              size: 18,
             ),
+            // Text(
+            //   "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
+            //   style: GoogleFonts.dongle(
+            //     color: Colors.black54,
+            //     fontSize: 18.0,
+            //   ),
+            // ),
             SizedBox(height: 5.0),
-            Text(
-              "Closed \u00B7 Opens 17:00 Thu",
-              style: GoogleFonts.dongle(
-                  color: Colors.black54,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold),
+            MyText(
+              text: "Closed \u00B7 Opens 17:00 Thu",
+              size: 18.0,
+              fontColor: Colors.black54,
+              fontWeight: FontWeight.bold,
             ),
+            // Text(
+            //   "Closed \u00B7 Opens 17:00 Thu",
+            //   style: GoogleFonts.dongle(
+            //       color: Colors.black54,
+            //       fontSize: 18.0,
+            //       fontWeight: FontWeight.bold),
+            // ),
             SizedBox(
               height: 40,
               width: 200,
@@ -242,12 +260,16 @@ class _MapScreenState extends State<MapScreen> {
                 onPressed: () {
                   print('object');
                 },
-                child: Text(
-                  'click me'.toUpperCase(),
-                  style: GoogleFonts.dongle(
-                    fontSize: 16,
-                  ),
+                child: MyText(
+                  text: 'click'.toUpperCase(),
+                  size: 16,
                 ),
+                // Text(
+                //   'click me'.toUpperCase(),
+                //   style: GoogleFonts.dongle(
+                //     fontSize: 16,
+                //   ),
+                // ),
               ),
             ),
           ],

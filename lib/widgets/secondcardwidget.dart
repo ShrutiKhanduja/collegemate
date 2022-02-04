@@ -1,3 +1,4 @@
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -43,9 +44,10 @@ class SecondCardWidget extends StatelessWidget {
                 Colors.black.withOpacity(0.7),
               ], end: Alignment.bottomCenter, begin: Alignment.topCenter),
             ),
-            child: Text(
-              name,
-              style: GoogleFonts.dongle(color: Colors.white, fontSize: 18),
+            child: MyText(
+              text: name,
+              size: 18,
+              fontColor: Colors.white,
             ),
           ),
         ],
