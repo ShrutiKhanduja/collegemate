@@ -141,9 +141,18 @@ class _MapScreenState extends State<MapScreen> {
                       // margin: EdgeInsets.symmetric(vertical: 20.0),
                       height: MediaQuery.of(context).size.height * 0.5,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          MyText(text: 'Title'),
-                          MyText(text: 'Title'),
+                          MyText(
+                            text: 'Booking for',
+                            size: 20,
+                            fontColor: Colors.grey,
+                          ),
+                          MyText(
+                            text: 'Today, 08:30 -10:30 PM (2 hrs)',
+                            fontColor: Colors.black,
+                            size: 20,
+                          ),
                           Expanded(
                             child: ListView(
                               scrollDirection: Axis.horizontal,
@@ -178,16 +187,9 @@ class _MapScreenState extends State<MapScreen> {
                 ),
               );
             },
-          )
+          ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     print('new location');
-      //     _goToPosition();
-      //   },
-      //   child: Icon(Icons.directions),
-      // ),
     );
   }
 
@@ -217,13 +219,6 @@ class _MapScreenState extends State<MapScreen> {
           size: 16.0,
           fontWeight: FontWeight.bold,
         ),
-        // Text(
-        //   restaurantName,
-        //   style: GoogleFonts.dongle(
-        //       color: Color(0xff6200ee),
-        //       fontSize: 16.0,
-        //       fontWeight: FontWeight.bold),
-        // ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -232,27 +227,13 @@ class _MapScreenState extends State<MapScreen> {
               fontColor: Colors.black54,
               size: 18,
             ),
-            // Text(
-            //   "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
-            //   style: GoogleFonts.dongle(
-            //     color: Colors.black54,
-            //     fontSize: 18.0,
-            //   ),
-            // ),
             SizedBox(height: 5.0),
             MyText(
-              text: "Closed \u00B7 Opens 17:00 Thu",
+              text: "Open \u00B7 Clos 17:00 Thu",
               size: 18.0,
               fontColor: Colors.black54,
               fontWeight: FontWeight.bold,
             ),
-            // Text(
-            //   "Closed \u00B7 Opens 17:00 Thu",
-            //   style: GoogleFonts.dongle(
-            //       color: Colors.black54,
-            //       fontSize: 18.0,
-            //       fontWeight: FontWeight.bold),
-            // ),
             SizedBox(
               height: 40,
               width: 200,
