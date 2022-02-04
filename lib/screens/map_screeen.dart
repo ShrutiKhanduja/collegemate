@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:collegemate/widgets/my_detail_container.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapScreen extends StatefulWidget {
@@ -211,7 +212,7 @@ class _MapScreenState extends State<MapScreen> {
         ),
         title: Text(
           restaurantName,
-          style: TextStyle(
+          style: GoogleFonts.dongle(
               color: Color(0xff6200ee),
               fontSize: 16.0,
               fontWeight: FontWeight.bold),
@@ -221,7 +222,7 @@ class _MapScreenState extends State<MapScreen> {
           children: <Widget>[
             Text(
               "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
-              style: TextStyle(
+              style: GoogleFonts.dongle(
                 color: Colors.black54,
                 fontSize: 18.0,
               ),
@@ -229,7 +230,7 @@ class _MapScreenState extends State<MapScreen> {
             SizedBox(height: 5.0),
             Text(
               "Closed \u00B7 Opens 17:00 Thu",
-              style: TextStyle(
+              style: GoogleFonts.dongle(
                   color: Colors.black54,
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold),
@@ -243,7 +244,7 @@ class _MapScreenState extends State<MapScreen> {
                 },
                 child: Text(
                   'click me'.toUpperCase(),
-                  style: TextStyle(
+                  style: GoogleFonts.dongle(
                     fontSize: 16,
                   ),
                 ),
@@ -298,11 +299,15 @@ class _MapScreenState extends State<MapScreen> {
 
   Future<void> _gotoLocation(double lat, double long) async {
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-      target: LatLng(lat, long),
-      zoom: 15,
-      tilt: 50.0,
-      bearing: 45.0,
-    )));
+    controller.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(
+          target: LatLng(lat, long),
+          zoom: 15,
+          tilt: 50.0,
+          bearing: 45.0,
+        ),
+      ),
+    );
   }
 }

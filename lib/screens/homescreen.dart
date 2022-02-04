@@ -1,6 +1,7 @@
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/widgets/second_list_view_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/list_view_widget.dart';
 
@@ -29,7 +30,7 @@ class AppHomeScreen extends StatelessWidget {
           ),
           title: Text(
             'WELCOME TO OUR APP',
-            style: TextStyle(fontSize: 16, color: Colors.black),
+            style: GoogleFonts.dongle(fontSize: 16, color: Colors.black),
           ),
           actions: [
             IconButton(
@@ -52,7 +53,7 @@ class AppHomeScreen extends StatelessWidget {
               ),
               Text(
                 'Container Text',
-                style: TextStyle(fontSize: 16),
+                style: GoogleFonts.dongle(fontSize: 16),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.013,
@@ -60,17 +61,18 @@ class AppHomeScreen extends StatelessWidget {
               ),
               // for only testing purpose
               GestureDetector(
-                  onTap: () {
-                    print('tap');
-                  },
-                  child: SecondListViewWidget()),
+                onTap: () {
+                  print('tap');
+                },
+                child: SecondListViewWidget(),
+              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.019,
                 //height: 15,
               ),
               Text(
                 'Find Cafeteria',
-                style: TextStyle(fontSize: 16),
+                style: GoogleFonts.dongle(fontSize: 16),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.013,
@@ -107,7 +109,7 @@ class AppHomeScreen extends StatelessWidget {
                       onPressed: () {},
                       child: Text(
                         'Book Now'.toUpperCase(),
-                        style: TextStyle(color: Colors.white),
+                        style: GoogleFonts.dongle(color: Colors.white),
                       ),
                     ),
                   ],

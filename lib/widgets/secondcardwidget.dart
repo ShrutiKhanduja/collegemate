@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // after List view widget
 class SecondCardWidget extends StatelessWidget {
@@ -44,7 +45,7 @@ class SecondCardWidget extends StatelessWidget {
             ),
             child: Text(
               name,
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: GoogleFonts.dongle(color: Colors.white, fontSize: 18),
             ),
           ),
         ],

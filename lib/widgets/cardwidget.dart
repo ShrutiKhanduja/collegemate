@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({
@@ -45,7 +46,7 @@ class CardWidget extends StatelessWidget {
             ),
             child: Text(
               name,
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: GoogleFonts.dongle(color: Colors.white, fontSize: 18),
             ),
           ),
         ],
