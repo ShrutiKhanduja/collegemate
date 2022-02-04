@@ -1,4 +1,3 @@
-import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/widgets/second_list_view_widget.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ class AppHomeScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: 8.0, right: 8),
             child: IconButton(
               icon: Icon(
                 Icons.account_circle,
@@ -27,13 +26,9 @@ class AppHomeScreen extends StatelessWidget {
                 print('Profile Icon pressed');
               },
             ),
-            // child: CircleAvatar(
-            //   radius: 2,
-            //   backgroundImage: AssetImage('assets/images/amazon.jpg'),
-            // ),
           ),
           title: Text(
-            'TITLE',
+            'WELCOME TO OUR APP',
             style: TextStyle(fontSize: 16, color: Colors.black),
           ),
           actions: [
@@ -53,7 +48,15 @@ class AppHomeScreen extends StatelessWidget {
             children: [
               ListViewWidget(),
               SizedBox(
-                height: 15,
+                height: MediaQuery.of(context).size.height * 0.019,
+              ),
+              Text(
+                'Container Text',
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.013,
+                //height: 10,
               ),
               // for only testing purpose
               GestureDetector(
@@ -62,14 +65,15 @@ class AppHomeScreen extends StatelessWidget {
                   },
                   child: SecondListViewWidget()),
               SizedBox(
-                height: 15,
+                height: MediaQuery.of(context).size.height * 0.019,
+                //height: 15,
               ),
               Text(
                 'Find Cafeteria',
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(
-                height: 10,
+                height: MediaQuery.of(context).size.height * 0.013,
               ),
               GestureDetector(
                 onTap: () {
@@ -82,15 +86,31 @@ class AppHomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: Container(
-                  height: 180,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      'assets/images/map.png',
-                      fit: BoxFit.cover,
+                child: Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    // fix height and width
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.20,
+                      //height: 150,
+                      width: double.infinity,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          'assets/images/map.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
-                  ),
+                    FlatButton(
+                      color: Colors.blue,
+                      onPressed: () {},
+                      child: Text(
+                        'Book Now'.toUpperCase(),
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -100,41 +120,3 @@ class AppHomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  Text(
-//                 'Container name',
-//                 style: TextStyle(fontSize: 16),
-//               ),
-//               SizedBox(
-//                 height: 10,
-//               ),
-//               Container(
-//                 height: 150,
-//                 child: ClipRRect(
-//                   borderRadius: BorderRadius.circular(15),
-//                   child: Image.asset(
-//                     'assets/images/amazon.jpg',
-//                     fit: BoxFit.cover,
-//                   ),
-//                 ),
-//               ),

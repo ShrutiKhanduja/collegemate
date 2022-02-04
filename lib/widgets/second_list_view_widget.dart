@@ -12,7 +12,8 @@ class SecondListViewWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: MediaQuery.of(context).size.height * 0.16,
+            //height: 120,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: newDummyData.length,

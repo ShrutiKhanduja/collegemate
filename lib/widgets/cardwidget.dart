@@ -13,41 +13,42 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      child: Card(
-        elevation: 6,
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Stack(
-          children: [
-            Image.asset(
-              image,
-              width: 180,
-              height: 200,
-              fit: BoxFit.cover,
+    return Card(
+      // elevation: 6,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Stack(
+        children: [
+          Image.asset(
+            image,
+            width: MediaQuery.of(context).size.width * 0.333,
+            //width: 120,
+            height: MediaQuery.of(context).size.height * 0.43,
+            // height: 200,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 10, bottom: 15),
+            alignment: Alignment.bottomLeft,
+            width: MediaQuery.of(context).size.width * 0.333,
+            //width: 120,
+            height: MediaQuery.of(context).size.height * 0.43,
+            //height: 200,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+                Colors.black.withOpacity(0.05),
+                Colors.black.withOpacity(0.1),
+                Colors.black.withOpacity(0.7),
+              ], end: Alignment.bottomCenter, begin: Alignment.topCenter),
             ),
-            Container(
-              padding: EdgeInsets.only(left: 30, bottom: 30),
-              alignment: Alignment.bottomLeft,
-              width: 180,
-              height: 200,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Colors.black.withOpacity(0.05),
-                  Colors.black.withOpacity(0.1),
-                  Colors.black.withOpacity(0.7),
-                ], end: Alignment.bottomCenter, begin: Alignment.topCenter),
-              ),
-              child: Text(
-                name,
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
+            child: Text(
+              name,
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

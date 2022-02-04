@@ -38,6 +38,8 @@ dependencies:
   location: ^4.3.0
   flutter_polyline_points: ^1.0.0
   persistent_bottom_nav_bar: ^4.0.2
+  font_awesome_flutter: ^9.2.0
+  google_fonts: ^2.2.0
 
 dev_dependencies:
   flutter_test:
