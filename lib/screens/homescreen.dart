@@ -6,9 +6,14 @@ import 'package:collegemate/widgets/second_list_view_widget.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
-class AppHomeScreen extends StatelessWidget {
+class AppHomeScreen extends StatefulWidget {
   const AppHomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<AppHomeScreen> createState() => _AppHomeScreenState();
+}
+
+class _AppHomeScreenState extends State<AppHomeScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
