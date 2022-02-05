@@ -12,6 +12,8 @@ class MapScreen extends StatefulWidget {
   State<MapScreen> createState() => _MapScreenState();
 }
 
+// changes to pull req
+
 class _MapScreenState extends State<MapScreen> {
   Completer<GoogleMapController> _controller = Completer();
 
@@ -141,47 +143,50 @@ class _MapScreenState extends State<MapScreen> {
                       ),
                       // margin: EdgeInsets.symmetric(vertical: 20.0),
                       height: MediaQuery.of(context).size.height * 0.5,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MyText(
-                            text: 'Booking for',
-                            size: 20,
-                            fontColor: Colors.grey,
-                          ),
-                          MyText(
-                            text: 'Today, 08:30 -10:30 PM (2 hrs)',
-                            fontColor: Colors.black,
-                            size: 20,
-                          ),
-                          Expanded(
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: <Widget>[
-                                SizedBox(width: 10.0),
-                                _boxes(
-                                    // "https://lh5.googleusercontent.com/p/AF1QipO3VPL9m-b355xWeg4MXmOQTauFAEkavSluTtJU=w225-h160-k-no",
-                                    "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
-                                    28.7251,
-                                    77.1125,
-                                    "Gramercy Tavern"),
-                                SizedBox(width: 10.0),
-                                _boxes(
-                                    "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
-                                    28.7241,
-                                    77.1025,
-                                    "Le Bernardin"),
-                                SizedBox(width: 10.0),
-                                _boxes(
-                                    // "https://images.unsplash.com/photo-1504940892017-d23b9053d5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-                                    "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
-                                    28.7331,
-                                    77.1425,
-                                    "Blue Hill"),
-                              ],
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 15, left: 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            MyText(
+                              text: 'Booking for',
+                              size: 20,
+                              fontColor: Colors.grey,
                             ),
-                          ),
-                        ],
+                            MyText(
+                              text: 'Today, 08:30 -10:30 PM (2 hrs)',
+                              fontColor: Colors.black,
+                              size: 20,
+                            ),
+                            Expanded(
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  SizedBox(width: 10.0),
+                                  _boxes(
+                                      // "https://lh5.googleusercontent.com/p/AF1QipO3VPL9m-b355xWeg4MXmOQTauFAEkavSluTtJU=w225-h160-k-no",
+                                      "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
+                                      28.7251,
+                                      77.1125,
+                                      "Gramercy Tavern"),
+                                  SizedBox(width: 10.0),
+                                  _boxes(
+                                      "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
+                                      28.7241,
+                                      77.1025,
+                                      "Le Bernardin"),
+                                  SizedBox(width: 10.0),
+                                  _boxes(
+                                      // "https://images.unsplash.com/photo-1504940892017-d23b9053d5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+                                      "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
+                                      28.7331,
+                                      77.1425,
+                                      "Blue Hill"),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -190,72 +195,6 @@ class _MapScreenState extends State<MapScreen> {
             },
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _box(String _image, double lat, double long, String restaurantName) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: 250,
-      child: ListTile(
-        tileColor: Colors.red,
-        isThreeLine: true,
-        leading: Column(
-          children: [
-            ClipRRect(
-              borderRadius: new BorderRadius.circular(10.0),
-              child: Image.network(
-                _image, fit: BoxFit.cover,
-                height: 80,
-                width: 100,
-                // height: double.infinity,
-              ),
-            ),
-          ],
-        ),
-        title: MyText(
-          text: restaurantName,
-          fontColor: Color(0xff6200ee),
-          size: 16.0,
-          fontWeight: FontWeight.bold,
-        ),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            MyText(
-              text: "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
-              fontColor: Colors.black54,
-              size: 18,
-            ),
-            SizedBox(height: 5.0),
-            MyText(
-              text: "Open \u00B7 Clos 17:00 Thu",
-              size: 18.0,
-              fontColor: Colors.black54,
-              fontWeight: FontWeight.bold,
-            ),
-            SizedBox(
-              height: 40,
-              width: 200,
-              child: ElevatedButton(
-                onPressed: () {
-                  print('object');
-                },
-                child: MyText(
-                  text: 'click'.toUpperCase(),
-                  size: 16,
-                ),
-                // Text(
-                //   'click me'.toUpperCase(),
-                //   style: GoogleFonts.dongle(
-                //     fontSize: 16,
-                //   ),
-                // ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

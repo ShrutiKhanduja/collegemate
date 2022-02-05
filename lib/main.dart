@@ -1,3 +1,4 @@
+import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: MapScreen(),
       //home: MapScreen(),
     );
   }
