@@ -1,15 +1,17 @@
+import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
+import 'package:collegemate/widgets/list_view_widget.dart';
 import 'package:collegemate/widgets/second_list_view_widget.dart';
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/list_view_widget.dart';
 
 class AppHomeScreen extends StatelessWidget {
   const AppHomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -22,9 +24,10 @@ class AppHomeScreen extends StatelessWidget {
               backgroundImage: AssetImage('assets/images/amazon.jpg'),
             ),
           ),
-          title: Text(
-            'TITLE',
-            style: TextStyle(fontSize: 16, color: Colors.black),
+          title: MyText(
+            text: 'WELCOME TO COLLEGE MATE',
+            size: 18,
+            fontColor: Colors.black,
           ),
           actions: [
             IconButton(
@@ -43,41 +46,72 @@ class AppHomeScreen extends StatelessWidget {
             children: [
               ListViewWidget(),
               SizedBox(
-                height: 15,
+                height: SizeConfig.deviceHeight * 0.019,
               ),
-              SecondListViewWidget(),
+              MyText(
+                text: 'Container Text',
+                size: 16,
+              ),
               SizedBox(
-                height: 15,
+                height: SizeConfig.deviceHeight * 0.013,
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: SecondListViewWidget(),
+              ),
+              SizedBox(
+                height: SizeConfig.deviceHeight * 0.019,
               ),
               Text(
                 'Container name',
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(
-                height: 10,
+                height: SizeConfig.deviceHeight * 0.013,
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MapScreen();
-                      },
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MapScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Stack(alignment: Alignment.bottomRight, children: [
+                    // fix height and width
+                    Container(
+                      height: SizeConfig.deviceHeight * 0.20,
+                      width: double.infinity,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          'assets/images/map.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
-                  );
-                },
-                child: Container(
-                  height: 180,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      'assets/images/map.png',
-                      fit: BoxFit.cover,
+                    // TextButton(
+                    //   style: TextButton.styleFrom(
+                    //     backgroundColor: Colors.blue,
+                    //   ),
+                    //   onPressed: () {},
+                    //   child: MyText(
+                    //     text: 'Book Now'.toUpperCase(),
+                    //     fontColor: Colors.white,
+                    //   ),
+                    // ),
+                    FlatButton(
+                      color: Colors.blue,
+                      onPressed: () {},
+                      child: MyText(
+                        text: 'Book Now'.toUpperCase(),
+                        fontColor: Colors.white,
+                      ),
                     ),
-                  ),
-                ),
-              ),
+                  ])),
             ],
           ),
         ),
@@ -85,41 +119,3 @@ class AppHomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  Text(
-//                 'Container name',
-//                 style: TextStyle(fontSize: 16),
-//               ),
-//               SizedBox(
-//                 height: 10,
-//               ),
-//               Container(
-//                 height: 150,
-//                 child: ClipRRect(
-//                   borderRadius: BorderRadius.circular(15),
-//                   child: Image.asset(
-//                     'assets/images/amazon.jpg',
-//                     fit: BoxFit.cover,
-//                   ),
-//                 ),
-//               ),

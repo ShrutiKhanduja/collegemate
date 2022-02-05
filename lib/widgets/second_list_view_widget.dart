@@ -1,4 +1,5 @@
 import 'package:collegemate/models/newdummy_model.dart';
+import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/widgets/secondcardwidget.dart';
 import 'package:flutter/material.dart';
 
@@ -7,21 +8,20 @@ class SecondListViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: SizeConfig.deviceHeight * 0.16,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: newDummyData.length,
               itemBuilder: (context, index) {
                 final data = newDummyData[index];
                 return GestureDetector(
-                  onTap: () {
-                    print('second list view widget');
-                  },
+                  onTap: () {},
                   child: SecondCardWidget(
                     image: data.image,
                     name: data.name,
@@ -29,7 +29,7 @@ class SecondListViewWidget extends StatelessWidget {
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     );
