@@ -106,6 +106,16 @@ class AppHomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    // TextButton(
+                    //   style: TextButton.styleFrom(
+                    //     backgroundColor: Colors.blue,
+                    //   ),
+                    //   onPressed: () {},
+                    //   child: MyText(
+                    //     text: 'Book Now'.toUpperCase(),
+                    //     fontColor: Colors.white,
+                    //   ),
+                    // ),
                     FlatButton(
                       color: Colors.blue,
                       onPressed: () {},
