@@ -26,7 +26,7 @@ class AppHomeScreen extends StatelessWidget {
           ),
           title: MyText(
             text: 'WELCOME TO COLLEGE MATE',
-            size: 18,
+            size: 26,
             fontColor: Colors.black,
           ),
           actions: [
@@ -50,7 +50,7 @@ class AppHomeScreen extends StatelessWidget {
               ),
               MyText(
                 text: 'Container Text',
-                size: 16,
+                size: 24,
               ),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.013,
@@ -62,9 +62,9 @@ class AppHomeScreen extends StatelessWidget {
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.019,
               ),
-              Text(
-                'Container name',
-                style: TextStyle(fontSize: 16),
+              MyText(
+                text: 'Container Text',
+                size: 24,
               ),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.013,
@@ -103,12 +103,15 @@ class AppHomeScreen extends StatelessWidget {
                     //     fontColor: Colors.white,
                     //   ),
                     // ),
-                    FlatButton(
-                      color: Colors.blue,
-                      onPressed: () {},
-                      child: MyText(
-                        text: 'Book Now'.toUpperCase(),
-                        fontColor: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15, bottom: 8),
+                      child: FlatButton(
+                        color: Colors.blue,
+                        onPressed: () {},
+                        child: MyText(
+                          text: 'Book Now'.toUpperCase(),
+                          fontColor: Colors.white,
+                        ),
                       ),
                     ),
                   ])),
