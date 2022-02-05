@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -32,23 +33,11 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Container(
                 alignment: Alignment.center,
-                // decoration: BoxDecoration(
-                //   image: DecorationImage(
-                //     image: AssetImage('assets/images/splash.jpeg'),
-                //     fit: BoxFit.fill,
-                //   ),
                 child: Image.asset(
                   'assets/images/splash.jpeg',
                   fit: BoxFit.cover,
                 ),
               ),
-              // Container(
-              //   // child: Image.asset('assets/images/splash.jpeg'),
-              //   child: Text(
-              //     'Splash Screen',
-              //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
-              //   ),
-              // ),
             ],
           ),
         ),
