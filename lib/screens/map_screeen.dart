@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:collegemate/responsive/size_config.dart';
 
 class MapScreen extends StatefulWidget {
   @override
@@ -82,6 +83,7 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       // appBar: AppBar(),
       body: Stack(
@@ -123,7 +125,6 @@ class _MapScreenState extends State<MapScreen> {
                         padding: const EdgeInsets.all(8),
                         child: FloatingActionButton(
                           onPressed: () {
-                            print('new location');
                             _goToPosition();
                           },
                           child: Icon(Icons.directions),

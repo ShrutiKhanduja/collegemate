@@ -3,6 +3,7 @@ import 'package:collegemate/widgets/second_list_view_widget.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:collegemate/responsive/size_config.dart';
 
 import '../widgets/list_view_widget.dart';
 
@@ -11,6 +12,7 @@ class AppHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -30,7 +32,7 @@ class AppHomeScreen extends StatelessWidget {
             ),
           ),
           title: MyText(
-            text: 'WELCOME TO OUR APP',
+            text: 'WELCOME TO COLLEGE MATE',
             size: 18,
             fontColor: Colors.black,
           ),
@@ -51,33 +53,28 @@ class AppHomeScreen extends StatelessWidget {
             children: [
               ListViewWidget(),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.019,
+                height: SizeConfig.deviceHeight * 0.019,
               ),
               MyText(
                 text: 'Container Text',
                 size: 16,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.013,
-                //height: 10,
+                height: SizeConfig.deviceHeight * 0.013,
               ),
-              // for only testing purpose
               GestureDetector(
-                onTap: () {
-                  print('tap');
-                },
+                onTap: () {},
                 child: SecondListViewWidget(),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.019,
-                //height: 15,
+                height: SizeConfig.deviceHeight * 0.019,
               ),
               MyText(
                 text: 'Find Cafeteria',
                 size: 16,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.013,
+                height: SizeConfig.deviceHeight * 0.013,
               ),
               GestureDetector(
                 onTap: () {
@@ -95,8 +92,7 @@ class AppHomeScreen extends StatelessWidget {
                   children: [
                     // fix height and width
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      //height: 150,
+                      height: SizeConfig.deviceHeight * 0.20,
                       width: double.infinity,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
