@@ -1,7 +1,9 @@
-import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/widgets/second_list_view_widget.dart';
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:collegemate/responsive/size_config.dart';
 
 import '../widgets/list_view_widget.dart';
 
@@ -10,13 +12,14 @@ class AppHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: 8.0, right: 8),
             child: IconButton(
               icon: Icon(
                 Icons.account_circle,
@@ -27,14 +30,11 @@ class AppHomeScreen extends StatelessWidget {
                 print('Profile Icon pressed');
               },
             ),
-            // child: CircleAvatar(
-            //   radius: 2,
-            //   backgroundImage: AssetImage('assets/images/amazon.jpg'),
-            // ),
           ),
-          title: Text(
-            'TITLE',
-            style: TextStyle(fontSize: 16, color: Colors.black),
+          title: MyText(
+            text: 'WELCOME TO COLLEGE MATE',
+            size: 18,
+            fontColor: Colors.black,
           ),
           actions: [
             IconButton(
@@ -53,23 +53,28 @@ class AppHomeScreen extends StatelessWidget {
             children: [
               ListViewWidget(),
               SizedBox(
-                height: 15,
+                height: SizeConfig.deviceHeight * 0.019,
               ),
-              // for only testing purpose
+              MyText(
+                text: 'Container Text',
+                size: 16,
+              ),
+              SizedBox(
+                height: SizeConfig.deviceHeight * 0.013,
+              ),
               GestureDetector(
-                  onTap: () {
-                    print('tap');
-                  },
-                  child: SecondListViewWidget()),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                'Find Cafeteria',
-                style: TextStyle(fontSize: 16),
+                onTap: () {},
+                child: SecondListViewWidget(),
               ),
               SizedBox(
-                height: 10,
+                height: SizeConfig.deviceHeight * 0.019,
+              ),
+              MyText(
+                text: 'Find Cafeteria',
+                size: 16,
+              ),
+              SizedBox(
+                height: SizeConfig.deviceHeight * 0.013,
               ),
               GestureDetector(
                 onTap: () {
@@ -82,15 +87,40 @@ class AppHomeScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: Container(
-                  height: 180,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      'assets/images/map.png',
-                      fit: BoxFit.cover,
+                child: Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    // fix height and width
+                    Container(
+                      height: SizeConfig.deviceHeight * 0.20,
+                      width: double.infinity,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          'assets/images/map.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
-                  ),
+                    // TextButton(
+                    //   style: TextButton.styleFrom(
+                    //     backgroundColor: Colors.blue,
+                    //   ),
+                    //   onPressed: () {},
+                    //   child: MyText(
+                    //     text: 'Book Now'.toUpperCase(),
+                    //     fontColor: Colors.white,
+                    //   ),
+                    // ),
+                    FlatButton(
+                      color: Colors.blue,
+                      onPressed: () {},
+                      child: MyText(
+                        text: 'Book Now'.toUpperCase(),
+                        fontColor: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -100,41 +130,3 @@ class AppHomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  Text(
-//                 'Container name',
-//                 style: TextStyle(fontSize: 16),
-//               ),
-//               SizedBox(
-//                 height: 10,
-//               ),
-//               Container(
-//                 height: 150,
-//                 child: ClipRRect(
-//                   borderRadius: BorderRadius.circular(15),
-//                   child: Image.asset(
-//                     'assets/images/amazon.jpg',
-//                     fit: BoxFit.cover,
-//                   ),
-//                 ),
-//               ),

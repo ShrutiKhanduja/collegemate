@@ -1,5 +1,7 @@
+import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/screens/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -22,8 +24,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   }
 
   List<Widget> _buildScreens() {
+    SizeConfig().init(context);
     return [
-      AppHomeScreen(),
       AppHomeScreen(),
       AppHomeScreen(),
       AppHomeScreen(),
@@ -34,40 +36,43 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   List<PersistentBottomNavBarItem> _navBarsItem() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.home),
-        title: "Home",
+        icon: const Icon(Icons.home),
         activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Colors.grey[400],
+        title: 'Home',
+        textStyle: GoogleFonts.dongle(
+            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.cleaning_services),
-        title: "Services",
+        icon: const Icon(Icons.local_library),
         activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Colors.grey[400],
+        title: 'My Courses',
+        textStyle: GoogleFonts.dongle(
+            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.light),
-        title: "FASTag",
+        icon: Icon(Icons.wallet_travel),
         activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Colors.grey[400],
+        title: 'Careers',
+        textStyle: GoogleFonts.dongle(
+            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.car_rental),
-        title: "My Vehicles",
+        icon: Icon(Icons.account_circle),
         activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.star),
-        title: "Discover",
-        activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Colors.grey[400],
+        title: 'Account',
+        textStyle: GoogleFonts.dongle(
+            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
       ),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: PersistentTabView(
         context,
@@ -76,9 +81,62 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         controller: _controller,
         confineInSafeArea: true,
         backgroundColor: Colors.white,
-        hideNavigationBarWhenKeyboardShows: true,
+        hideNavigationBarWhenKeyboardShows: false,
         navBarStyle: NavBarStyle.style6,
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// List<PersistentBottomNavBarItem> _navBarsItems() {
+//     return [
+     
+//     ];
+//   }
