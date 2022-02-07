@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecondCardWidget extends StatelessWidget {
+  // SecondCardWidget second row amazon image container widgets
   final String name;
   final String image;
   const SecondCardWidget({

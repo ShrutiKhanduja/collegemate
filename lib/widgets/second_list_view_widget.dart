@@ -4,6 +4,7 @@ import 'package:collegemate/widgets/secondcardwidget.dart';
 import 'package:flutter/material.dart';
 
 class SecondListViewWidget extends StatelessWidget {
+  // SecondListViewWidget is a listview builder who show second card widget
   const SecondListViewWidget({Key? key}) : super(key: key);
 
   @override

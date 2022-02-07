@@ -28,24 +28,17 @@ class CardWidget extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            //width: SizeConfig.deviceWidth * 0.333,
-            width: MediaQuery.of(context).size.width * 0.280,
-            // width: MediaQuery.of(context).size.width * 0.333,
+            width: SizeConfig.deviceWidth * 0.280,
             //width: 120,
-            //height: SizeConfig.deviceHeight * 0.43,
-            height: MediaQuery.of(context).size.height * 0.43,
-            // height: 200,
+            height: SizeConfig.deviceHeight * 0.43,
+
             fit: BoxFit.cover,
           ),
           Container(
             padding: EdgeInsets.only(left: 10, bottom: 15),
             alignment: Alignment.bottomLeft,
-            //width: SizeConfig.deviceWidth * 0.333,
-            width: MediaQuery.of(context).size.width * 0.280,
-            //width: 120,
-            // height: SizeConfig.deviceHeight * 0.43,
-            height: MediaQuery.of(context).size.height * 0.43,
-            //height: 200,
+            width: SizeConfig.deviceWidth * 0.280,
+            height: SizeConfig.deviceHeight * 0.43,
             decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
                 Colors.black.withOpacity(0.05),

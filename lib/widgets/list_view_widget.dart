@@ -18,8 +18,8 @@ class ListViewWidget extends StatelessWidget {
         children: [
           Container(
             //height:SizeConfig.deviceHeight * 0.238,
-            height: MediaQuery.of(context).size.height * 0.238,
-//             //height: 180,
+            //height: MediaQuery.of(context).size.height * 0.238,
+            height: 180,
             // height: 180,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -27,9 +27,7 @@ class ListViewWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 final data = dummyData[index];
                 return GestureDetector(
-                  onTap: () {
-                    print('list view widget');
-                  },
+                  onTap: () {},
                   child: CardWidget(
                     image: data.image,
                     name: data.name,
