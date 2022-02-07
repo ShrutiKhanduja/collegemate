@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:collegemate/responsive/size_config.dart';
 
 class CardWidget extends StatelessWidget {
+  // Card Widget is first row widgets in home screen
   const CardWidget({
     Key? key,
     required this.name,
@@ -28,7 +29,8 @@ class CardWidget extends StatelessWidget {
           Image.asset(
             image,
             //width: SizeConfig.deviceWidth * 0.333,
-            width: MediaQuery.of(context).size.width * 0.333,
+            width: MediaQuery.of(context).size.width * 0.280,
+            // width: MediaQuery.of(context).size.width * 0.333,
             //width: 120,
             //height: SizeConfig.deviceHeight * 0.43,
             height: MediaQuery.of(context).size.height * 0.43,
@@ -39,7 +41,7 @@ class CardWidget extends StatelessWidget {
             padding: EdgeInsets.only(left: 10, bottom: 15),
             alignment: Alignment.bottomLeft,
             //width: SizeConfig.deviceWidth * 0.333,
-            width: MediaQuery.of(context).size.width * 0.333,
+            width: MediaQuery.of(context).size.width * 0.280,
             //width: 120,
             // height: SizeConfig.deviceHeight * 0.43,
             height: MediaQuery.of(context).size.height * 0.43,

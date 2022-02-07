@@ -31,7 +31,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
           ),
           title: MyText(
             text: 'WELCOME TO COLLEGE MATE',
-            size: 18,
+            size: 26,
             fontColor: Colors.black,
           ),
           actions: [
@@ -55,7 +55,7 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
               ),
               MyText(
                 text: 'Container Text',
-                size: 16,
+                size: 24,
               ),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.013,
@@ -67,25 +67,27 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.019,
               ),
-              Text(
-                'Container name',
-                style: TextStyle(fontSize: 16),
+              MyText(
+                text: 'Container Text',
+                size: 24,
               ),
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.013,
               ),
               GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return MapScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Stack(alignment: Alignment.bottomRight, children: [
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MapScreen();
+                      },
+                    ),
+                  );
+                },
+                child: Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
                     // fix height and width
                     Container(
                       height: SizeConfig.deviceHeight * 0.20,
@@ -98,25 +100,41 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                         ),
                       ),
                     ),
-                    // TextButton(
-                    //   style: TextButton.styleFrom(
-                    //     backgroundColor: Colors.blue,
-                    //   ),
-                    //   onPressed: () {},
-                    //   child: MyText(
-                    //     text: 'Book Now'.toUpperCase(),
-                    //     fontColor: Colors.white,
-                    //   ),
-                    // ),
-                    FlatButton(
-                      color: Colors.blue,
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                      ),
                       onPressed: () {},
                       child: MyText(
                         text: 'Book Now'.toUpperCase(),
                         fontColor: Colors.white,
                       ),
                     ),
-                  ])),
+                    // GestureDetector(
+                    //   onTap: () {},
+                    //   child: Container(
+                    //     padding: EdgeInsets.only(bottom: 8),
+                    //     color: Colors.blue,
+                    //     child: MyText(
+                    //       text: 'Book Now'.toUpperCase(),
+                    //       fontColor: Colors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(right: 15, bottom: 8),
+                    //   child: FlatButton(
+                    //     color: Colors.blue,
+                    //     onPressed: () {},
+                    //     child: MyText(
+                    //       text: 'Book Now'.toUpperCase(),
+                    //       fontColor: Colors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

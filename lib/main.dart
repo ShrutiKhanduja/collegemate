@@ -1,5 +1,7 @@
+import 'package:collegemate/screens/homescreen.dart';
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/screens/splash_screen.dart';
+import 'package:collegemate/utils/custom_color.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,9 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: primaryThemeColor,
       ),
-      home: MapScreen(),
+      home: SplashScreen(),
       //home: MapScreen(),
     );
   }

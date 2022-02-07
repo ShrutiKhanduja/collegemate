@@ -6,6 +6,7 @@ import 'cardwidget.dart';
 import 'package:collegemate/responsive/size_config.dart';
 
 class ListViewWidget extends StatelessWidget {
+  //this listview widget have list view builder to show Cardwidget
   const ListViewWidget({Key? key}) : super(key: key);
 
   @override

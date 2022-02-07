@@ -2,8 +2,6 @@ import 'dart:async';
 import 'package:collegemate/widgets/my_detail_container.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:collegemate/responsive/size_config.dart';
 
@@ -204,33 +202,28 @@ class _MapScreenState extends State<MapScreen> {
       onTap: () {
         _gotoLocation(lat, long);
       },
-      child: Container(
-        height: 200,
-        // width: 300,
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              width: 150,
-              height: 170,
-              child: ClipRRect(
-                borderRadius: new BorderRadius.circular(24.0),
-                child: Image(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(_image),
-                ),
+      child: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: 120,
+            height: 150,
+            child: ClipRRect(
+              borderRadius: new BorderRadius.circular(16.0),
+              child: Image(
+                fit: BoxFit.fill,
+                image: NetworkImage(_image),
               ),
             ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: myDetailsContainer1(restaurantName),
-              ),
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: myDetailsContainer1(restaurantName),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
