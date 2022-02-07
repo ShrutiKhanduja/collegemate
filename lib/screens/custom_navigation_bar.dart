@@ -1,5 +1,6 @@
 import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/screens/homescreen.dart';
+import 'package:collegemate/utils/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -37,35 +38,43 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     return [
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.home),
-        activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey[400],
+        activeColorPrimary: activeColor,
+        inactiveColorPrimary: inActiveColor,
         title: 'Home',
         textStyle: GoogleFonts.dongle(
-            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
+          color: secondaryColor,
+          fontSize: SizeConfig.deviceHeight * 0.02,
+        ),
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.local_library),
-        activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey[400],
+        activeColorPrimary: activeColor,
+        inactiveColorPrimary: inActiveColor,
         title: 'My Courses',
         textStyle: GoogleFonts.dongle(
-            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
+          color: secondaryColor,
+          fontSize: SizeConfig.deviceHeight * 0.02,
+        ),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.wallet_travel),
-        activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey[400],
+        activeColorPrimary: activeColor,
+        inactiveColorPrimary: inActiveColor,
         title: 'Careers',
         textStyle: GoogleFonts.dongle(
-            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
+          color: secondaryColor,
+          fontSize: SizeConfig.deviceHeight * 0.02,
+        ),
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.account_circle),
-        activeColorPrimary: Colors.red,
-        inactiveColorPrimary: Colors.grey[400],
+        activeColorPrimary: activeColor,
+        inactiveColorPrimary: inActiveColor,
         title: 'Account',
         textStyle: GoogleFonts.dongle(
-            color: Colors.black, fontSize: SizeConfig.deviceHeight * 0.02),
+          color: secondaryColor,
+          fontSize: SizeConfig.deviceHeight * 0.02,
+        ),
       ),
     ];
   }
@@ -80,63 +89,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         items: _navBarsItem(),
         controller: _controller,
         confineInSafeArea: true,
-        backgroundColor: Colors.white,
+        backgroundColor: primaryColor,
         hideNavigationBarWhenKeyboardShows: false,
         navBarStyle: NavBarStyle.style6,
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// List<PersistentBottomNavBarItem> _navBarsItems() {
-//     return [
-     
-//     ];
-//   }
