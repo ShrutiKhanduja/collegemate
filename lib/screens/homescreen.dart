@@ -100,14 +100,18 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                         ),
                       ),
                     ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                      ),
-                      onPressed: () {},
-                      child: MyText(
-                        text: 'Book Now'.toUpperCase(),
-                        fontColor: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12, top: 15),
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                        ),
+                        onPressed: () {},
+                        child: MyText(
+                          text: 'Book Now'.toUpperCase(),
+                          fontColor: Colors.white,
+                          size: 16,
+                        ),
                       ),
                     ),
                     // GestureDetector(
