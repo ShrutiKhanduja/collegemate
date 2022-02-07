@@ -1,4 +1,5 @@
 import 'package:collegemate/screens/custom_navigation_bar.dart';
+import 'package:collegemate/utils/custom_color.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: primaryColor,
       body: SafeArea(
         child: Center(
           child: Column(
