@@ -127,7 +127,7 @@ class _MapScreenState extends State<MapScreen> {
                           onPressed: () {
                             _goToPosition();
                           },
-                          child: Icon(Icons.directions),
+                          child: Icon(Icons.navigation),
                         ),
                       ),
                     ),
