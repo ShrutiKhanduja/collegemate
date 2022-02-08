@@ -1,4 +1,4 @@
-import 'package:collegemate/models/newdummy_model.dart';
+import 'package:collegemate/models/dummy_model.dart';
 import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/widgets/secondcardwidget.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +18,9 @@ class SecondListViewWidget extends StatelessWidget {
             height: SizeConfig.deviceHeight * 0.16,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: newDummyData.length,
+              itemCount: dummyData.length,
               itemBuilder: (context, index) {
-                final data = newDummyData[index];
+                final data = dummyData[index];
                 return GestureDetector(
                   onTap: () {},
                   child: SecondCardWidget(

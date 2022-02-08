@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,7 +29,7 @@ class MyText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.dongle(
-          fontSize: size,
+          fontSize: size ?? 14,
           color: fontColor ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.normal),
     );

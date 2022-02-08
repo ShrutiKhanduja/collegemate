@@ -1,5 +1,6 @@
 import 'package:collegemate/screens/sign_up.dart';
 import 'package:collegemate/widgets/custom_text_field.dart';
+import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,6 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
@@ -34,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 20,
+                height: 30,
               ),
               // svg image
               SvgPicture.asset(
@@ -103,8 +105,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: ShapeDecoration(
                     color: Colors.red,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(14),
+                      borderRadius: BorderRadius.circular(
+                        14,
                       ),
                     ),
                   ),
@@ -156,28 +158,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
-              // // signin package button
-              // Container(
-              //   width: double.infinity,
-              //   child: SignInButton(
-              //     Buttons.Google,
-              //     onPressed: () {
-              //       //_showButtonPressDialog(context, 'Google');
-              //     },
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.all(
-              //         Radius.circular(14),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
               Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    child: Text("Don't have an account ? "),
+                    child: MyText(
+                      text: "Don't have an account ?",
+                      size: 20,
+                    ),
+
+                    //Text("Don't have an account ? "),
                     padding: EdgeInsets.symmetric(vertical: 8),
                   ),
                   SizedBox(
@@ -191,11 +182,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       }));
                     },
                     child: Container(
-                      child: Text(
-                        'Register',
-                        style: TextStyle(color: Colors.blue
-                            // fontWeight: FontWeight.bold,
-                            ),
+                      child: MyText(
+                        text: 'Register',
+                        fontColor: Colors.blue,
+                        size: 22,
                       ),
                       padding: EdgeInsets.symmetric(vertical: 8),
                     ),
@@ -212,76 +202,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-// InkWell(
-//   onTap: () {},
-//   child: Container(
-//     child: Text(
-//       'Login with Google',
-//       style: TextStyle(color: Colors.black),
-//     ),
-//     width: double.infinity,
-//     padding: EdgeInsets.symmetric(vertical: 12),
-//     alignment: Alignment.center,
-//     decoration: ShapeDecoration(
-//       color: Colors.white,
-//       shape: RoundedRectangleBorder(
-//         borderRadius: BorderRadius.all(
-//           Radius.circular(25),
-//         ),
-//       ),
-//     ),
-//   ),
-// ), // for creating spacing in upper side
-// Flexible(
-//   child: Container(),
-//   flex: 2,
-// ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Container(
-              //   decoration: BoxDecoration(
-              //     border: Border.all(color: Colors.white),
-              //   ),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //     children: [
-              //       SizedBox(
-              //         height: 30,
-              //         child: Image.asset(
-              //           'assets/images/google.png',
-              //           fit: BoxFit.cover,
-              //         ),
-              //       ),
-              //       Text('Login With Google'),
-              //     ],
-              //   ),
-              // ),
-              

@@ -102,16 +102,18 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                         ),
                       ),
                     ),
+
                     Padding(
                       padding: const EdgeInsets.only(right: 12, bottom: 5),
                       child: OutlinedButton(
                         style: ElevatedButton.styleFrom(
-                            textStyle: TextStyle(fontSize: 18),
-                            primary: Colors.white,
-                            side: BorderSide(
-                              width: 1,
-                              color: activeColor,
-                            )),
+                          textStyle: TextStyle(fontSize: 18),
+                          primary: Colors.white,
+                          side: BorderSide(
+                            width: 1,
+                            color: activeColor,
+                          ),
+                        ),
                         onPressed: () {},
                         child: MyText(
                           text: 'Book Now'.toUpperCase(),
