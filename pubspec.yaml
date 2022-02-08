@@ -41,6 +41,9 @@ dependencies:
   font_awesome_flutter: ^9.2.0
   google_fonts: ^2.2.0
   path_provider: ^2.0.8
+  flutter_rating_bar: ^4.0.0
+  flutter_svg: ^1.0.3
+  flutter_signin_button: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +73,9 @@ flutter:
     - assets/images/map.png
     - assets/images/college.jpg
     - assets/images/splash.jpeg
+    - assets/images/logo.svg
+    - assets/images/google-plus.svg
+    - assets/images/google.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

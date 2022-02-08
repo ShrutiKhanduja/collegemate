@@ -1,5 +1,4 @@
 import 'package:collegemate/responsive/size_config.dart';
-import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/utils/custom_color.dart';
 import 'package:collegemate/widgets/list_view_widget.dart';
