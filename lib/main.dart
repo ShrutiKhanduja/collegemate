@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primaryThemeColor,
       ),
-      // home: LoginScreen(),
+      //upto date 9 feb 2022
+
       home: SplashScreen(),
-      //home: MapScreen(),
+      // home:LoginScreen(),
     );
   }
 }
