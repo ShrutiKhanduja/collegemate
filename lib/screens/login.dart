@@ -1,4 +1,6 @@
+import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/screens/sign_up.dart';
+import 'package:collegemate/utils/custom_color.dart';
 import 'package:collegemate/widgets/custom_text_field.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
@@ -44,9 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.black,
                 height: 64,
               ),
-              SizedBox(
-                height: 50,
-              ),
+              SizedBox(height: SizeConfig.deviceHeight * 0.0654),
               // textfield input email
               CustomTextField(
                 // we have to create a variable for text editing controller
@@ -55,9 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: 'Enter Your E-mail',
                 icon: Icon(Icons.email),
               ),
-              SizedBox(
-                height: 24,
-              ),
+              SizedBox(height: SizeConfig.deviceHeight * 0.032),
               // textfield input password
               CustomTextField(
                 // we have to create a variable for text editing controller
@@ -78,9 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 //Icon(Icons.visibility_off),
                 isPass: isHiddenPassword,
               ),
-              SizedBox(
-                height: 24,
-              ),
+              SizedBox(height: SizeConfig.deviceHeight * 0.032),
               InkWell(
                 child: Container(
                   alignment: Alignment.centerRight,
@@ -103,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.symmetric(vertical: 12),
                   alignment: Alignment.center,
                   decoration: ShapeDecoration(
-                    color: Colors.red,
+                    color: activeColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                         14,
@@ -113,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: SizeConfig.deviceHeight * 0.016,
               ),
 
               Container(
@@ -123,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: SizeConfig.deviceHeight * 0.016,
               ),
 
               InkWell(
@@ -143,15 +140,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: 30,
+                        height: SizeConfig.deviceHeight * 0.04,
                         child: Image.asset(
                           'assets/images/google.png',
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
+                      SizedBox(width: SizeConfig.deviceWidth * 0.03),
                       Text('Login With Google'),
                     ],
                   ),
@@ -167,12 +162,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: "Don't have an account ?",
                       size: 20,
                     ),
-
-                    //Text("Don't have an account ? "),
                     padding: EdgeInsets.symmetric(vertical: 8),
                   ),
                   SizedBox(
-                    width: 8,
+                    width: SizeConfig.deviceWidth * 0.024,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -189,9 +182,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       padding: EdgeInsets.symmetric(vertical: 8),
                     ),
-                  ),
-                  SizedBox(
-                    height: 40,
                   ),
                 ],
               ),

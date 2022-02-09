@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
+  // for textfield signin and login
   final TextEditingController textEditingController;
   final bool isPass;
   final String hintText;
