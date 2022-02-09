@@ -1,7 +1,6 @@
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:collegemate/responsive/size_config.dart';
 
 class CardWidget extends StatelessWidget {
@@ -19,7 +18,6 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Card(
-      // elevation: 6,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
@@ -29,9 +27,7 @@ class CardWidget extends StatelessWidget {
           Image.asset(
             image,
             width: SizeConfig.deviceWidth * 0.280,
-            //width: 120,
             height: SizeConfig.deviceHeight * 0.43,
-
             fit: BoxFit.cover,
           ),
           Container(

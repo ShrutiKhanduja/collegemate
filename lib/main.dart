@@ -1,4 +1,5 @@
 import 'package:collegemate/screens/homescreen.dart';
+import 'package:collegemate/screens/login.dart';
 import 'package:collegemate/screens/map_screeen.dart';
 import 'package:collegemate/screens/splash_screen.dart';
 import 'package:collegemate/utils/custom_color.dart';
@@ -11,18 +12,18 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // is not restarted.
         primarySwatch: primaryThemeColor,
       ),
+      //upto date 9 feb 2022
+
       home: SplashScreen(),
-      //home: MapScreen(),
+      // home:LoginScreen(),
     );
   }
 }

@@ -1,16 +1,17 @@
 import 'dart:async';
-import 'package:collegemate/widgets/my_detail_container.dart';
+import 'package:collegemate/models/cafeteria_dummy_data.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:collegemate/responsive/size_config.dart';
+
+import 'restaurent_detail_page.dart';
 
 class MapScreen extends StatefulWidget {
   @override
   State<MapScreen> createState() => _MapScreenState();
 }
-
-// changes to pull req
 
 class _MapScreenState extends State<MapScreen> {
   Completer<GoogleMapController> _controller = Completer();
@@ -66,7 +67,6 @@ class _MapScreenState extends State<MapScreen> {
       BitmapDescriptor.hueMagenta,
     ),
   );
-  // List<Marker> _markers = <Marker>[];
   List<Marker> list = [];
   @override
   void initState() {
@@ -77,7 +77,6 @@ class _MapScreenState extends State<MapScreen> {
       bernardinMarker,
       blueMarker
     ];
-    // _markers.addAll(list);
     super.initState();
   }
 
@@ -85,13 +84,11 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      // appBar: AppBar(),
       body: Stack(
         children: [
           GoogleMap(
             myLocationButtonEnabled: false,
             markers: Set<Marker>.of(list),
-            // {_redMarker, _blueMarker},
             polylines: {_kPolyline},
             zoomControlsEnabled: false,
             initialCameraPosition: _intialCameraPostion,
@@ -127,7 +124,7 @@ class _MapScreenState extends State<MapScreen> {
                           onPressed: () {
                             _goToPosition();
                           },
-                          child: Icon(Icons.directions),
+                          child: Icon(Icons.navigation),
                         ),
                       ),
                     ),
@@ -139,7 +136,6 @@ class _MapScreenState extends State<MapScreen> {
                           topRight: Radius.circular(10),
                         ),
                       ),
-                      // margin: EdgeInsets.symmetric(vertical: 20.0),
                       height: MediaQuery.of(context).size.height * 0.5,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15, left: 16),
@@ -149,39 +145,128 @@ class _MapScreenState extends State<MapScreen> {
                             MyText(
                               text: 'Booking for',
                               size: 20,
-                              fontColor: Colors.grey,
+                              fontColor: Colors.black,
                             ),
                             MyText(
                               text: 'Today, 08:30 -10:30 PM (2 hrs)',
                               fontColor: Colors.black,
                               size: 20,
                             ),
+                            // SizedBox(
+                            //   height: 5,
+                            // ),
                             Expanded(
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: <Widget>[
-                                  SizedBox(width: 10.0),
-                                  _boxes(
-                                      // "https://lh5.googleusercontent.com/p/AF1QipO3VPL9m-b355xWeg4MXmOQTauFAEkavSluTtJU=w225-h160-k-no",
-                                      "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
-                                      28.7251,
-                                      77.1125,
-                                      "Gramercy Tavern"),
-                                  SizedBox(width: 10.0),
-                                  _boxes(
-                                      "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
-                                      28.7241,
-                                      77.1025,
-                                      "Le Bernardin"),
-                                  SizedBox(width: 10.0),
-                                  _boxes(
-                                      // "https://images.unsplash.com/photo-1504940892017-d23b9053d5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-                                      "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
-                                      28.7331,
-                                      77.1425,
-                                      "Blue Hill"),
-                                ],
-                              ),
+                              child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: cafeData.length,
+                                  itemBuilder: (context, index) {
+                                    final data = cafeData[index];
+                                    return GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                                builder: (context) {
+                                          return RestaurentDetailPage(
+                                            name: data.name,
+                                            image: data.image,
+                                            rating: data.rating,
+                                            timing: data.timing,
+                                            distance: data.distance,
+                                            address: data.address!,
+                                          );
+                                        }));
+                                      },
+                                      child: Container(
+                                        height: 160,
+                                        width: 300,
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            SizedBox(
+                                              width: 120,
+                                              height: 140,
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    new BorderRadius.circular(
+                                                        12.0),
+                                                child: Image(
+                                                  fit: BoxFit.fill,
+                                                  image:
+                                                      NetworkImage(data.image),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 10, left: 10),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  MyText(
+                                                    text: data.name,
+                                                    size: 24,
+                                                    fontColor: Colors.red,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                  RatingBarIndicator(
+                                                    rating: double.parse(
+                                                        data.rating),
+                                                    itemBuilder:
+                                                        (context, index) =>
+                                                            Icon(
+                                                      Icons.star,
+                                                      color: Colors.amber,
+                                                    ),
+                                                    itemCount: 5,
+                                                    itemSize: 18.0,
+                                                    direction: Axis.horizontal,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 7,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        size: 18,
+                                                      ),
+                                                      SizedBox(
+                                                          width: SizeConfig
+                                                                  .deviceWidth *
+                                                              0.020),
+                                                      Text(data.distance),
+                                                    ],
+                                                  ),
+                                                  MyText(
+                                                    text: data.timing,
+                                                    fontColor: Colors.black54,
+                                                    size: 20,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 26,
+                                                    width: 150,
+                                                    child: ElevatedButton(
+                                                      onPressed: () {
+                                                        print('object');
+                                                      },
+                                                      child: MyText(
+                                                        text: 'Click Me'
+                                                            .toUpperCase(),
+                                                        size: 16,
+                                                        fontColor: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  }),
                             ),
                           ],
                         ),
@@ -197,53 +282,8 @@ class _MapScreenState extends State<MapScreen> {
     );
   }
 
-  Widget _boxes(String _image, double lat, double long, String restaurantName) {
-    return GestureDetector(
-      onTap: () {
-        _gotoLocation(lat, long);
-      },
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            width: 120,
-            height: 150,
-            child: ClipRRect(
-              borderRadius: new BorderRadius.circular(16.0),
-              child: Image(
-                fit: BoxFit.fill,
-                image: NetworkImage(_image),
-              ),
-            ),
-          ),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: myDetailsContainer1(restaurantName),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Future<void> _goToPosition() async {
     final GoogleMapController controller = await _controller.future;
     controller.animateCamera(CameraUpdate.newCameraPosition(_localPosition));
-  }
-
-  Future<void> _gotoLocation(double lat, double long) async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(
-      CameraUpdate.newCameraPosition(
-        CameraPosition(
-          target: LatLng(lat, long),
-          zoom: 15,
-          tilt: 50.0,
-          bearing: 45.0,
-        ),
-      ),
-    );
   }
 }

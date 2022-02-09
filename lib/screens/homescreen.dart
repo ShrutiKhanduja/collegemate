@@ -1,6 +1,6 @@
 import 'package:collegemate/responsive/size_config.dart';
-import 'package:collegemate/screens/custom_navigation_bar.dart';
 import 'package:collegemate/screens/map_screeen.dart';
+import 'package:collegemate/utils/custom_color.dart';
 import 'package:collegemate/widgets/list_view_widget.dart';
 import 'package:collegemate/widgets/second_list_view_widget.dart';
 import 'package:collegemate/widgets/text_widget.dart';
@@ -51,28 +51,30 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
             children: [
               ListViewWidget(),
               SizedBox(
-                height: SizeConfig.deviceHeight * 0.019,
+                height: SizeConfig.deviceHeight * 0.010,
               ),
               MyText(
                 text: 'Container Text',
                 size: 24,
               ),
               SizedBox(
-                height: SizeConfig.deviceHeight * 0.013,
+                height:
+                    SizeConfig.deviceHeight * 0.010, // change size into small
               ),
               GestureDetector(
                 onTap: () {},
                 child: SecondListViewWidget(),
               ),
               SizedBox(
-                height: SizeConfig.deviceHeight * 0.019,
+                height:
+                    SizeConfig.deviceHeight * 0.010, // change size into small
               ),
               MyText(
                 text: 'Container Text',
                 size: 24,
               ),
               SizedBox(
-                height: SizeConfig.deviceHeight * 0.013,
+                height: SizeConfig.deviceHeight * 0.010,
               ),
               GestureDetector(
                 onTap: () {
@@ -100,38 +102,26 @@ class _AppHomeScreenState extends State<AppHomeScreen> {
                         ),
                       ),
                     ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                      ),
-                      onPressed: () {},
-                      child: MyText(
-                        text: 'Book Now'.toUpperCase(),
-                        fontColor: Colors.white,
+
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12, bottom: 5),
+                      child: OutlinedButton(
+                        style: ElevatedButton.styleFrom(
+                          textStyle: TextStyle(fontSize: 18),
+                          primary: Colors.white,
+                          side: BorderSide(
+                            width: 1,
+                            color: activeColor,
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: MyText(
+                          text: 'Book Now'.toUpperCase(),
+                          fontColor: Colors.red,
+                          size: 20,
+                        ),
                       ),
                     ),
-                    // GestureDetector(
-                    //   onTap: () {},
-                    //   child: Container(
-                    //     padding: EdgeInsets.only(bottom: 8),
-                    //     color: Colors.blue,
-                    //     child: MyText(
-                    //       text: 'Book Now'.toUpperCase(),
-                    //       fontColor: Colors.white,
-                    //     ),
-                    //   ),
-                    // ),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(right: 15, bottom: 8),
-                    //   child: FlatButton(
-                    //     color: Colors.blue,
-                    //     onPressed: () {},
-                    //     child: MyText(
-                    //       text: 'Book Now'.toUpperCase(),
-                    //       fontColor: Colors.white,
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),

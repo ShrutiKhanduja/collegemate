@@ -17,10 +17,7 @@ class ListViewWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            //height:SizeConfig.deviceHeight * 0.238,
-            //height: MediaQuery.of(context).size.height * 0.238,
             height: 180,
-            // height: 180,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: dummyData.length,
@@ -41,45 +38,6 @@ class ListViewWidget extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // return SafeArea(
 //       child: Column(

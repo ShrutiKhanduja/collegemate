@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,7 +12,7 @@ class MyText extends StatelessWidget {
   // final int? lines;
   final String? fontFamily;
 
-  const MyText({
+  MyText({
     required this.text,
     this.size,
     this.fontWeight,
@@ -28,9 +27,9 @@ class MyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text.toString(),
+      text,
       style: GoogleFonts.dongle(
-          fontSize: size,
+          fontSize: size ?? 14,
           color: fontColor ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.normal),
     );
