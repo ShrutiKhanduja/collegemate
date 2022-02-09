@@ -1,5 +1,7 @@
 import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/screens/homescreen.dart';
+import 'package:collegemate/screens/login.dart';
+import 'package:collegemate/screens/sign_up.dart';
 import 'package:collegemate/utils/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,8 +30,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     SizeConfig().init(context);
     return [
       AppHomeScreen(),
-      AppHomeScreen(),
-      AppHomeScreen(),
+      LoginScreen(),
+      SignUpScreen(),
       AppHomeScreen(),
     ];
   }
@@ -46,6 +48,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           fontSize: SizeConfig.deviceHeight * 0.02,
         ),
       ),
+      // show login Screen
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.local_library),
         activeColorPrimary: activeColor,
@@ -56,6 +59,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           fontSize: SizeConfig.deviceHeight * 0.02,
         ),
       ),
+      //show signup screen
       PersistentBottomNavBarItem(
         icon: Icon(Icons.wallet_travel),
         activeColorPrimary: activeColor,
