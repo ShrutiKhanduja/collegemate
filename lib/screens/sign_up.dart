@@ -1,4 +1,6 @@
+import 'package:collegemate/responsive/size_config.dart';
 import 'package:collegemate/screens/login.dart';
+import 'package:collegemate/utils/custom_color.dart';
 import 'package:collegemate/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,6 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
@@ -44,8 +47,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   color: Colors.black,
                   height: 64,
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: SizeConfig.deviceHeight * 0.052,
                 ),
 
                 // textfield input user
@@ -56,8 +59,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Enter Your Full Name',
                   icon: Icon(Icons.verified_user),
                 ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: SizeConfig.deviceHeight * 0.032,
                 ),
                 // textfield input email
                 CustomTextField(
@@ -67,8 +70,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Enter Your E-mail',
                   icon: Icon(Icons.email),
                 ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: SizeConfig.deviceHeight * 0.032,
                 ),
                 // textfield input password
                 CustomTextField(
@@ -89,8 +92,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         : Icons.visibility),
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: SizeConfig.deviceHeight * 0.032,
                 ),
 
                 CustomTextField(
@@ -100,8 +103,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Enter Your Mobile Number',
                   icon: Icon(Icons.phone),
                 ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: SizeConfig.deviceHeight * 0.032,
                 ),
                 // button login
                 InkWell(
@@ -115,7 +118,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     alignment: Alignment.center,
                     decoration: const ShapeDecoration(
-                      color: Colors.red,
+                      color: activeColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(14),
@@ -124,8 +127,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 16,
+                SizedBox(
+                  height: SizeConfig.deviceHeight * 0.019,
                 ),
 
                 Row(
@@ -135,8 +138,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: const Text("Joined us before?"),
                       padding: const EdgeInsets.symmetric(vertical: 8),
                     ),
-                    const SizedBox(
-                      width: 4,
+                    SizedBox(
+                      width: SizeConfig.deviceWidth * 0.012,
                     ),
                     GestureDetector(
                       onTap: () {
