@@ -22,7 +22,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           TabBar(
             indicatorColor: Colors.red,
             labelColor: Colors.red,
-            unselectedLabelColor: Colors.black,
+            unselectedLabelColor: Colors.black54,
             tabs: [
               Tab(text: 'Recommended'),
               Tab(text: 'Popular'),

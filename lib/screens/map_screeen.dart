@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:collegemate/models/cafeteria_dummy_data.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:collegemate/responsive/size_config.dart';
 
@@ -11,8 +12,6 @@ class MapScreen extends StatefulWidget {
   @override
   State<MapScreen> createState() => _MapScreenState();
 }
-
-// changes to pull req
 
 class _MapScreenState extends State<MapScreen> {
   Completer<GoogleMapController> _controller = Completer();
@@ -68,7 +67,6 @@ class _MapScreenState extends State<MapScreen> {
       BitmapDescriptor.hueMagenta,
     ),
   );
-  // List<Marker> _markers = <Marker>[];
   List<Marker> list = [];
   @override
   void initState() {
@@ -79,7 +77,6 @@ class _MapScreenState extends State<MapScreen> {
       bernardinMarker,
       blueMarker
     ];
-    // _markers.addAll(list);
     super.initState();
   }
 
@@ -87,13 +84,11 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      // appBar: AppBar(),
       body: Stack(
         children: [
           GoogleMap(
             myLocationButtonEnabled: false,
             markers: Set<Marker>.of(list),
-            // {_redMarker, _blueMarker},
             polylines: {_kPolyline},
             zoomControlsEnabled: false,
             initialCameraPosition: _intialCameraPostion,
@@ -141,7 +136,6 @@ class _MapScreenState extends State<MapScreen> {
                           topRight: Radius.circular(10),
                         ),
                       ),
-                      // margin: EdgeInsets.symmetric(vertical: 20.0),
                       height: MediaQuery.of(context).size.height * 0.5,
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15, left: 16),
@@ -151,13 +145,16 @@ class _MapScreenState extends State<MapScreen> {
                             MyText(
                               text: 'Booking for',
                               size: 20,
-                              fontColor: Colors.grey,
+                              fontColor: Colors.black,
                             ),
                             MyText(
                               text: 'Today, 08:30 -10:30 PM (2 hrs)',
                               fontColor: Colors.black,
                               size: 20,
                             ),
+                            // SizedBox(
+                            //   height: 5,
+                            // ),
                             Expanded(
                               child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
@@ -188,11 +185,11 @@ class _MapScreenState extends State<MapScreen> {
                                           children: <Widget>[
                                             SizedBox(
                                               width: 120,
-                                              height: 150,
+                                              height: 140,
                                               child: ClipRRect(
                                                 borderRadius:
                                                     new BorderRadius.circular(
-                                                        16.0),
+                                                        12.0),
                                                 child: Image(
                                                   fit: BoxFit.fill,
                                                   image:
@@ -210,29 +207,43 @@ class _MapScreenState extends State<MapScreen> {
                                                   MyText(
                                                     text: data.name,
                                                     size: 24,
-                                                    fontColor:
-                                                        Color(0xff6200ee),
+                                                    fontColor: Colors.red,
                                                     fontWeight: FontWeight.bold,
                                                   ),
-                                                  MyText(
-                                                    text: data.rating,
-                                                    fontColor: Colors.black,
-                                                    size: 16,
+                                                  RatingBarIndicator(
+                                                    rating: double.parse(
+                                                        data.rating),
+                                                    itemBuilder:
+                                                        (context, index) =>
+                                                            Icon(
+                                                      Icons.star,
+                                                      color: Colors.amber,
+                                                    ),
+                                                    itemCount: 5,
+                                                    itemSize: 18.0,
+                                                    direction: Axis.horizontal,
                                                   ),
-                                                  MyText(
-                                                    text: data.distance,
-                                                    fontColor: Colors.black54,
-                                                    size: 20,
+                                                  SizedBox(
+                                                    height: 7,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        size: 18,
+                                                      ),
+                                                      SizedBox(
+                                                          width: SizeConfig
+                                                                  .deviceWidth *
+                                                              0.020),
+                                                      Text(data.distance),
+                                                    ],
                                                   ),
                                                   MyText(
                                                     text: data.timing,
                                                     fontColor: Colors.black54,
                                                     size: 20,
-                                                    // fontWeight: FontWeight.w400,
                                                   ),
-                                                  // SizedBox(
-                                                  //   height: 5,
-                                                  // ),
                                                   SizedBox(
                                                     height: 26,
                                                     width: 150,

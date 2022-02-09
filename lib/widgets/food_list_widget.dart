@@ -59,7 +59,6 @@ class _FoodState extends State<Food> {
                     children: <Widget>[
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           MyText(
                             text: data.name,
@@ -71,7 +70,7 @@ class _FoodState extends State<Food> {
                             text: data.description,
                             size: 24.0,
                             fontColor: Colors.black,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w300,
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -79,7 +78,7 @@ class _FoodState extends State<Food> {
                             child: Row(
                               children: [
                                 RatingBarIndicator(
-                                  rating: 3.4,
+                                  rating: double.parse(data.rating),
                                   itemBuilder: (context, index) => Icon(
                                     Icons.star,
                                     color: Colors.amber,
@@ -88,6 +87,8 @@ class _FoodState extends State<Food> {
                                   itemSize: 18.0,
                                   direction: Axis.horizontal,
                                 ),
+                                SizedBox(width: SizeConfig.deviceWidth * 0.030),
+                                Text(data.rating),
                               ],
                             ),
                           ),
@@ -106,9 +107,13 @@ class _FoodState extends State<Food> {
                             child: ClipRRect(
                               borderRadius: new BorderRadius.circular(8.0),
                               child: Image(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(data.image),
+                                fit: BoxFit.cover,
+                                image: AssetImage(data.image),
                               ),
+                              // Image(
+                              //   fit: BoxFit.fill,
+                              //   image: NetworkImage(data.image),
+                              // ),
                             ),
                           ),
                           SizedBox(

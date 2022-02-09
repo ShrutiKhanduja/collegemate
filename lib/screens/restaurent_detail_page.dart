@@ -36,7 +36,7 @@ class _RestaurentDetailPageState extends State<RestaurentDetailPage> {
         body: Column(
           children: [
             SizedBox(
-              height: SizeConfig.deviceHeight * 0.22,
+              height: SizeConfig.deviceHeight * 0.235,
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.only(top: 16, left: 20, right: 20),
@@ -67,13 +67,8 @@ class _RestaurentDetailPageState extends State<RestaurentDetailPage> {
                               Icons.location_on,
                               size: 22,
                             ),
-                            SizedBox(width: SizeConfig.deviceWidth * 0.015),
-                            MyText(
-                              text: widget.distance,
-                              fontColor: Colors.grey,
-                              fontWeight: FontWeight.w500,
-                              size: 24,
-                            ),
+                            SizedBox(width: SizeConfig.deviceWidth * 0.020),
+                            Text(widget.distance),
                           ],
                         ),
                       ],
@@ -93,7 +88,7 @@ class _RestaurentDetailPageState extends State<RestaurentDetailPage> {
                           height: SizeConfig.deviceHeight * 0.01,
                         ),
                         RatingBarIndicator(
-                          rating: 3.5,
+                          rating: double.parse(widget.rating),
                           itemBuilder: (context, index) => Icon(
                             Icons.star,
                             color: Colors.amber,
@@ -103,7 +98,7 @@ class _RestaurentDetailPageState extends State<RestaurentDetailPage> {
                           direction: Axis.horizontal,
                         ),
                         MyText(
-                          text: 'Rating - 3.5',
+                          text: 'Rating - ' + widget.rating,
                           size: 24,
                           fontWeight: FontWeight.w300,
                         ),

@@ -16,31 +16,27 @@ class FoodData {
 
 List<FoodData> fooddata = [
   FoodData(
-      image:
-          'https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no',
+      image: 'assets/images/pizza.jpg',
       name: 'Pizza',
       price: '249',
-      rating: '3',
+      rating: '3.2',
       description: 'description'),
   FoodData(
-      image:
-          'https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no',
-      name: 'Burger',
-      price: '129',
-      rating: '4',
-      description: 'description'),
-  FoodData(
-      image:
-          'https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no',
+      image: 'assets/images/sandwich.jpg',
       name: 'Sandwich',
       price: '119',
-      rating: '3',
+      rating: '3.5',
       description: 'description'),
   FoodData(
-      image:
-          'https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no',
+      image: 'assets/images/fries.jpg',
       name: 'Fries',
       price: '70',
-      rating: '3',
+      rating: '5',
+      description: 'description'),
+  FoodData(
+      image: 'assets/images/burger.jpg',
+      name: 'Burger',
+      price: '129',
+      rating: '4.5',
       description: 'description'),
 ];
