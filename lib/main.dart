@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       //upto date 9 feb 2022
 
-      home: SplashScreen(),
+      home: MapScreen(),
       // home:LoginScreen(),
     );
   }
