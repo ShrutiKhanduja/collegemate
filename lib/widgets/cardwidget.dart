@@ -31,7 +31,7 @@ class CardWidget extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Container(
-            padding: EdgeInsets.only(left: 10, bottom: 15),
+            padding: EdgeInsets.only(left: 12, bottom: 15),
             alignment: Alignment.bottomLeft,
             width: SizeConfig.deviceWidth * 0.280,
             height: SizeConfig.deviceHeight * 0.43,

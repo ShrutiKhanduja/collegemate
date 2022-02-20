@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecondCardWidget extends StatelessWidget {
-  // SecondCardWidget second row amazon image container widgets
   final String name;
   final String image;
   const SecondCardWidget({
@@ -17,7 +16,6 @@ class SecondCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Card(
-      // elevation: 6,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),

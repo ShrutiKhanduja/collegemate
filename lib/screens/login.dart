@@ -4,9 +4,7 @@ import 'package:collegemate/utils/custom_color.dart';
 import 'package:collegemate/widgets/custom_text_field.dart';
 import 'package:collegemate/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,10 +14,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // for email text field controller
   final TextEditingController _emailcontroller = TextEditingController();
-
-  // for password text field controller
   final TextEditingController _passwordcontroller = TextEditingController();
 
   bool isHiddenPassword = true;
@@ -31,35 +26,25 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 34),
-          width: double.infinity,
+        child: Padding(
+          padding: EdgeInsets.only(top: 50, right: 25, left: 25),
           child: Column(
-            // centered like horizontal direction x axis
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 30,
-              ),
-              // svg image
               SvgPicture.asset(
                 'assets/images/logo.svg',
                 color: Colors.black,
                 height: 64,
               ),
               SizedBox(height: SizeConfig.deviceHeight * 0.0654),
-              // textfield input email
               CustomTextField(
-                // we have to create a variable for text editing controller
                 textEditingController: _emailcontroller,
                 textInputType: TextInputType.emailAddress,
                 hintText: 'Enter Your E-mail',
                 icon: Icon(Icons.email),
               ),
               SizedBox(height: SizeConfig.deviceHeight * 0.032),
-              // textfield input password
               CustomTextField(
-                // we have to create a variable for text editing controller
                 textEditingController: _passwordcontroller,
                 textInputType: TextInputType.visiblePassword,
                 hintText: 'Enter Your Password',
@@ -74,7 +59,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ? Icons.visibility
                       : Icons.visibility_off),
                 ),
-                //Icon(Icons.visibility_off),
                 isPass: isHiddenPassword,
               ),
               SizedBox(height: SizeConfig.deviceHeight * 0.032),
@@ -88,7 +72,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Divider(),
-              // button login
               InkWell(
                 onTap: () {},
                 child: Container(
@@ -109,10 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: SizeConfig.deviceHeight * 0.016,
-              ),
-
+              SizedBox(height: SizeConfig.deviceHeight * 0.016),
               Container(
                 child: Text(
                   'OR',
@@ -122,7 +102,6 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: SizeConfig.deviceHeight * 0.016,
               ),
-
               InkWell(
                 onTap: () {},
                 child: Container(
@@ -152,8 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-
-              Divider(),
+              const Divider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

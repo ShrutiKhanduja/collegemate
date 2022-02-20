@@ -6,7 +6,6 @@ import 'cardwidget.dart';
 import 'package:collegemate/responsive/size_config.dart';
 
 class ListViewWidget extends StatelessWidget {
-  //this listview widget have list view builder to show Cardwidget
   const ListViewWidget({Key? key}) : super(key: key);
 
   @override
@@ -16,8 +15,9 @@ class ListViewWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 180,
+          SizedBox(
+            // height: 180,
+            height: SizeConfig.deviceHeight * 0.24,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: dummyData.length,
@@ -38,28 +38,3 @@ class ListViewWidget extends StatelessWidget {
     );
   }
 }
-
-// return SafeArea(
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           Container(
-//             height: 180,
-//             child: ListView.builder(
-//               scrollDirection: Axis.horizontal,
-//               itemCount: dummyData.length,
-//               itemBuilder: (context, index) {
-//                 final data = dummyData[index];
-//                 return GestureDetector(
-//                   onTap: () {},
-//                   child: CardWidget(
-//                     image: data.image,
-//                     name: data.name,
-//                   ),
-//                 );
-//               },
-//             ),
-//           )
-//         ],
-//       ),
-//     );

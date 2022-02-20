@@ -1,6 +1,7 @@
 import 'package:collegemate/screens/homescreen.dart';
 import 'package:collegemate/screens/login.dart';
 import 'package:collegemate/screens/map_screeen.dart';
+import 'package:collegemate/screens/sign_up.dart';
 import 'package:collegemate/screens/splash_screen.dart';
 import 'package:collegemate/utils/custom_color.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primaryThemeColor,
       ),
-      //upto date 9 feb 2022
+      //upto date 20 feb 2022
 
-      home: MapScreen(),
+      home: SplashScreen(),
       // home:LoginScreen(),
     );
   }
